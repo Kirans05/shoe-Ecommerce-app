@@ -14,12 +14,15 @@ const AdminRouter = require("./routes/AdminRoute")
 const ProductDetails = require("./routes/product")
 const morgan = require("morgan")
 app.use(morgan("dev"))
+const paymentRoutes = require("./Routes/payment");
+
 
 
 
 app.use("/user",UserRouter)
 app.use("/admin",AdminRouter)
 app.use("/fetch",ProductDetails)
+app.use("/api/payment/", paymentRoutes)
 
 
 
